@@ -76,19 +76,19 @@ WSGI_APPLICATION = 'ecclesiastes.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    #'default': {
-     #   'ENGINE': 'django.db.backends.sqlite3',
-     #   'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-        'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecclesiastes',
-        'USER': 'root',
-        'PASSWORD': 'shizz0078',
-        'HOST': '127.0.0.1',
-        'PORT': '8889',
-
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+     #   'default': {
+      #  'ENGINE': 'django.db.backends.mysql',
+       # 'NAME': 'ecclesiastes',
+       # 'USER': 'root',
+       # 'PASSWORD': 'shizz0078',
+       # 'HOST': '127.0.0.1',
+       # 'PORT': '8889',
+
+    #}
 }
 
 
