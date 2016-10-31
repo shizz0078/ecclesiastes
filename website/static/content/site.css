@@ -1,0 +1,84 @@
+body{
+	background-color: #FFFFFF;
+}
+
+#maintron{
+	/**background-image: url(images/logo.png);
+	background-repeat: no-repeat;**/
+}
+
+.navbar-brand{
+	/*background-image: url(images/small_logo2.png);
+	width:135px;
+	height: 50px;
+	background-color: white;*/
+	/*background-image: url(images/small_logo.png);
+	width: 115px;
+	height: 50px;
+	object-fit: contain;
+	background-color: white;
+	*/
+}
+
+.navbar{
+	background-color: #394c85;
+	
+}
+
+#navbar a{
+	color:#FFFFFF;
+}
+
+#navbar a:hover{
+	color:#FFFFFF;
+}
+.navbar-toggle{
+	background-color: gray;
+}
+
+#navbar ul.nav-custom-drop li a{
+	color:black;
+}
+
+#navbar li.dropdown.open a.dropdown-toggle{
+	color:#bf8032;
+}
+
+#navbar li.active a{
+	background-color: #f1c066;
+}
+
+.logo-small {
+    /*color: #f4511e;*/
+    color: #4c65b1;
+    font-size: 50px;
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
+
+.bg-grey {
+    /*background-color: #f6f6f6;*/
+    background-color: #f7f8fc;
+}
+
+.bg-darkblue{
+	background-color: #394c85;
+}
+
+.bg-lightgreen{
+	background-color: #68B0BA;
+}
+
+.col-headers{
+	background-color: #4c65b1;
+	color:white;
+	padding: 10px;
+}
+
+.footer{
+	background-color: #394c85;
+	color:white;
+}

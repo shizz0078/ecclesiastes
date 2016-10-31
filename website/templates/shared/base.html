@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'content/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'content/jquery-ui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'content/site.css' %}">
+    <script type="text/javascript" src="{% static 'scripts/jquery-3.1.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scripts/bootstrap.js' %}"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+  
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!--<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="{% url 'home' %}" >Home</a></li>
+            <li role="presentation"><a href="#">Kowledge Corner</a></li>
+            <li role="presentation"><a href="{% url 'contact' %}" >Contact</a></li>
+            <li role="presentation"><a href="#">Login / Register</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Ecclesiastes</h3>
+      </div>-->
+      {% url '/' as root_url %}
+      {% url 'home' as home_url %}
+      {% url 'contact' as contact_url %}
+      {% url 'knowledge' as knowledge_url %}
+ 
+      <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+          <div class="container">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{% url 'home' %}" style="color:#ffffff;">Ecclesiastes</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li {% if request.get_full_path == home_url or request.path == '/'%} class="active" {% endif %} ><a href="{% url 'home' %}">Home</a></li>
+                <li {% if request.get_full_path == contact_url %} class="active" {% endif %} ><a href="{% url 'contact' %}">Contact</a></li>
+                <li {% if request.get_full_path == knowledge_url %} class="active" {% endif %} ><a href="#about">Knowledge Corner</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret"></span></a>
+                  <ul class="dropdown-menu nav-custom-drop">
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Featured Articles</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <!--<div class="navbar-wrapper">
+      <div class="container">
+
+        
+
+      </div>
+    </div>-->
+
+      
+    <div class="container" style="margin-top: 60px;">
+
+    {% if messages %}
+    <div class='row'>
+      <div class="col-sm-12">
+        {% for message in messages %}
+        <p style="color:black;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="alert alert-success">
+      <a href="{% url 'home' %}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Success!</strong> Indicates a successful or positive action.
+    </div>
+    {% endif %}
+
+    {% block content %}
+      {% endblock content %}
+        <footer class="footer text-center">
+          <p>&copy; Ecclesiastes Business Enterprise.LLC &nbsp; &nbsp; eccbusinessenterprise@gmail.com &nbsp; &nbsp; 1-484-690-4910</p>
+        </footer>
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

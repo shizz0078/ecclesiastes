@@ -1,0 +1,92 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+<!--<h1>WELCOME</h1>
+<h3>all the content for main page goes here</h3>-->
+
+<div class="jumbotron" style="margin-top: 60px; background: none; border:1px solid #f6f6f6;">
+        <img class="img-responsive center-block" src="../static/content/images/logo_web.png" align="middle">
+</div>
+
+      <div id="maintron" class="jumbotron bg-grey" >
+        <h1 style="color:#4c65b1;">Business Services</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success bg-lightgreen" href="{% url 'contact' %}" role="button">Contact us today</a></p>
+      </div>
+
+
+<div class="container-fluid text-center bg-grey">
+  <h2 style="color:#efc050;">SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-briefcase logo-small"></span>
+      <h4>Aministrative Assessment</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-link logo-small"></span>
+      <h4>Personal Business Networking</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-user logo-small"></span>
+      <h4>Virtual Administrative Assistance</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-tasks logo-small"></span>
+      <h4>Small Business/Nonprofit Consultation</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Aministrative Assessment</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Personal Business Networking</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Virtual Administrative Assistance</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Small Business/Nonprofit Consultation</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+  </div>-->
+
+<br/>
+
+<div class="well bg-grey">
+	<div class="container-fluid">
+        <div class="col-lg-6">
+          <h4 class="col-headers">Administrative Assessment</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+			<br/>
+          <h4 class="col-headers">Virtual Administrative Assistance</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+        </div>
+
+        <div class="col-lg-6">
+          <h4 class="col-headers">Personal Business Networking</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+			<br/>
+          <h4 class="col-headers">Small Business/Nonprofit Consultation</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

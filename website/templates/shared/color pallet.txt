@@ -1,0 +1,13 @@
+color pallet
+eccles font color logo : 778ac5
+swoop : f1c066
+leaves : bf8032
+small font : 828282
+
+
+
+light gray : f7f8fc
+
+
+
+
