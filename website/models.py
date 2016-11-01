@@ -23,7 +23,7 @@ class ContactUs(models.Model):
 	def save(self):
 		if self.id:
     			self.date_modified = datetime.now()
-    		super(ContactUs, self).save()
+                super(ContactUs, self).save()
 
 	def __str__(self):
 		return self.first_name + " " + self.last_name
