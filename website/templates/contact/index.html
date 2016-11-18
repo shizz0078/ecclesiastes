@@ -4,16 +4,21 @@
 
 
 	
-
-	<form method='POST' action='.'>
-		{% csrf_token %}
-		{% if not messages %}
-		<h1>Contact us at</h1>
-		{{ form.as_p}}
-		
-		<input type="submit"></input>
-		{% endif %}
-	</form>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<form id="contact_form" method='POST' action='.'>
+				{% csrf_token %}
+				{% if not messages %}
+				<h1>Contact us at</h1>
+				{{ form.as_table}}
+				
+				<input type="submit"></input>
+				{% endif %}
+			</form>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
 		
 
 

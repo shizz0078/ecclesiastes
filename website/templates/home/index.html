@@ -3,48 +3,86 @@
 {% block content %}
 <!--<h1>WELCOME</h1>
 <h3>all the content for main page goes here</h3>-->
-
-<div class="jumbotron" style="margin-top: 60px; background: none; border:1px solid #f6f6f6;">
-        <img class="img-responsive center-block" src="../static/content/images/logo_web.png" align="middle">
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <img class="img-responsive center-block" src="../static/content/images/logo_web.png" align="middle">
+  </div>
+  <div class="col-sm-3"></div>
 </div>
 
-      <div id="maintron" class="jumbotron bg-grey" >
+<!--<div class="well" style="margin-top: 60px; background: none; border:1px solid #f6f6f6;">
+        <img class="img-responsive center-block" src="../static/content/images/logo_web.png" align="middle">
+</div>-->
+<br/>
+<!--<div class="row row-color-white">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <h1 style="color:#4c65b1;">Business Services</h1>
+    <p class="lead">“Creating a solution to the wrong problem is more detrimental than the problem itself.”</p>
+    <p >Servicing: Small Business &amp Nonprofit Organizations </p>
+    <p><a class="btn btn-lg btn-success bg-lightgreen" href="{% url 'contact' %}" role="button">Contact us today</a></p>
+  </div>
+  <div class="col-sm-3"></div>
+</div>-->
+
+<div id="homeImgRow" class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div> <p class="font-color-white">{{cm.cm_philosophy}}</p> </div>
+    <p><a class="btn btn-lg btn-success bg-lightgreen pull-right" href="{% url 'contact' %}" role="button">Contact us today</a></p>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+      <!--<div id="maintron" class="jumbotron bg-grey" >
         <h1 style="color:#4c65b1;">Business Services</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p class="lead">“Creating a solution to the wrong problem is more detrimental than the problem itself.”</p>
+        <p >Servicing: Small Business &amp Nonprofit Organizations </p>
         <p><a class="btn btn-lg btn-success bg-lightgreen" href="{% url 'contact' %}" role="button">Contact us today</a></p>
-      </div>
+      </div>-->
 
 
-<div class="container-fluid text-center bg-grey">
-  <h2 style="color:#efc050;">SERVICES</h2>
-  <h4>What we offer</h4>
+
+<div class="row row-color-gold" id="aboutUs">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+      <h2 class="featurette-heading"><span class="font-color-white">About Us</span></h2>
+
+              <p class="lead">
+              {{cm.cm_about_us}}
+              </p>
+
+      </div>  
+
+  <div class="col-sm-2"></div>
+</div>
+
+ <!--<hr class="featurette-divider">-->
+
+
+
+<div class="row text-center bg-grey" id="sevices">
+<br>
+  <div class="col-sm-12">
+    <h2 class="font-color-teal">SERVICES</h2>
+  </div>
   <br>
   <div class="row">
-    <div class="col-sm-6">
-      <span class="glyphicon glyphicon-briefcase logo-small"></span>
-      <h4>Aministrative Assessment</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <div class="col-sm-6">
+      <span class="glyphicon glyphicon-tasks logo-small"></span>
+      <h4>Small Business/Nonprofit Consultation</h4>
+      <!--<p>Lorem ipsum dolor sit amet..</p>-->
     </div>
-    <div class="col-sm-6">
-      <span class="glyphicon glyphicon-link logo-small"></span>
-      <h4>Personal Business Networking</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row">
     <div class="col-sm-6">
       <span class="glyphicon glyphicon-user logo-small"></span>
       <h4>Virtual Administrative Assistance</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <!--<p>Lorem ipsum dolor sit amet..</p>-->
     </div>
-    <div class="col-sm-6">
-      <span class="glyphicon glyphicon-tasks logo-small"></span>
-      <h4>Small Business/Nonprofit Consultation</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
+
   </div>
+  <br/>
 </div>
+
 
 
  <!-- <div class="panel-group">
@@ -68,25 +106,50 @@
 
 <br/>
 
-<div class="well bg-grey">
-	<div class="container-fluid">
-        <div class="col-lg-6">
-          <h4 class="col-headers">Administrative Assessment</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-			<br/>
-          <h4 class="col-headers">Virtual Administrative Assistance</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+<!--<div class="container-fluid" id="meetTeam">-->
 
+      <!--<hr class="featurette-divider">-->
+
+      <div id="meetTeam" class="row featurette">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <h2 class="featurette-heading"><span class="font-color-teal">Meet The Team</span></h2>
+        <figure style="width: 150px; float: left; margin-right: 10px; margin-bottom: 5px;" >
+          <img src="../static/content/images/mo.png"> 
+          <figcaption class="captions-1 text-center">Monique Harrington,<br>President</figcaption>
+        </figure>
+          <p class="lead">
+             Monique Harrington, a Philly native, received Summa Cum Laude honors from Northeastern University along with her Bachelor’s degree in Entrepreneurship and Small Business Management. With a desire to see a better world, she set out to apply her business education and organizational skills as an administrative support and resource for nonprofit and small businesses.
+          </p>
+          <p class="lead">
+            Over ten years, Monique has demonstrated advanced proficiency in a broad skill set with basic administrative experience as well as complex program development and management. Executive leadership, human resources, finances, marketing, development, information technology, and direct program work are vital skills that Monique carries into every meeting and consultation. Her ability to develop processes and staffing procedures has demonstrated boosts to efficiency and effectiveness in both large and small organizations. Most importantly, Monique has a unique ability to work with people, support their visions, and make them feel valued and respected. Her honesty, reliability, integrity, and perseverance are the inherent talents that make her practice work.
+          </p>
+          </div>
+          <div class="col-sm-2"></div>
+      </div>
+<!--</div>-->
+
+<!--<hr class="featurette-divider">-->
+ <br/>
+
+<div class="row row-color-teal font-color-white" id="services">
+        <div class="col-lg-2">
+
+          </div>
+        <div class="col-lg-8">
+            <div class="col-lg-6">
+            <h3 class="col-headers">Virtual Administrative Assistance</h3>
+            <p>Delegate administrative tasks to our devoted team and access a reliable, efficient resource to handle specific tasks. The time that your organization saves in task delegation frees up resources for serving your clients and community.</p>
+          </div>
+           <div class="col-lg-6">
+            <h3 class="col-headers">Small Business/Nonprofit Consultation</h3>
+            <p>Following an in-depth consultation meeting to discuss organization goals and current operational procedures, client will receive a written assessment report that outlines recommended steps to effectively implement strategic goals and boost operational efficiency. Our assessment will also identify the tasks that can be delegated to a virtual administrative assistance service to save valuable resources.</p>
+          </div>
+                  <br>
         </div>
 
-        <div class="col-lg-6">
-          <h4 class="col-headers">Personal Business Networking</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-			<br/>
-          <h4 class="col-headers">Small Business/Nonprofit Consultation</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <div class="col-lg-2">
         </div>
-    </div>
 </div>
 
 {% endblock content %}

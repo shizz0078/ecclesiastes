@@ -1,19 +1,25 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from .models import ContactUs
+from .models import ContentManagement
 from .forms import ContactUsForm
 from  django.contrib import messages
+from django.contrib import auth
+from django.template.context_processors import csrf
 
 # Create your views here.
 def index(request):
 	#return HttpResponse("YERP")
 	#return HttpResponse(template.render(request))
-	return render(request, 'home/index.html')
+	cm = ContentManagement.objects.get(id=1)
+	return render(request, 'home/index.html', {'cm':cm})
 
 def home(request):
 	#return HttpResponse("YERP")
 	#return HttpResponse(template.render(request))
-	return render(request, 'home/index.html')
+	cm = ContentManagement.objects.get(id=1)
+	return render(request, 'home/index.html', {'cm':cm})
 
 def contact(request):
 	#return HttpResponse("YERP")
@@ -27,3 +33,8 @@ def contact(request):
 		return render(request, 'contact/index.html')
 		
 	return render(request, 'contact/index.html', {'form':form})
+
+def login(request):
+	c ={}
+	c.update(csrf(request))
+	return render_to_response('login.html', c)

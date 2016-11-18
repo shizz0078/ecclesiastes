@@ -1,3 +1,5 @@
+
+
 body{
 	background-color: #FFFFFF;
 }
@@ -59,6 +61,29 @@ body{
     font-size: 200px;
 }
 
+#homeImgRow{
+	height: 375px;
+	background-image: url(images/wheat-field.jpg);
+	padding-top: 2%;
+}
+
+#homeImgRow p{
+	font-size: 2em;
+	font-weight: 400;
+	z-index: 100;
+	background-color: none;
+	/*background-color: #000;
+	opacity: 0.25;
+    filter: alpha(opacity=50);*/ /* For IE8 and earlier */
+}
+
+.font-bg-block {
+	background-color: black;
+	opacity: 0.25;
+    filter: alpha(opacity=50);
+    z-index: 1;
+}
+
 .bg-grey {
     /*background-color: #f6f6f6;*/
     background-color: #f7f8fc;
@@ -72,13 +97,97 @@ body{
 	background-color: #68B0BA;
 }
 
+.bg-white{
+	background-color: #FFF;
+}
+
 .col-headers{
-	background-color: #4c65b1;
-	color:white;
-	padding: 10px;
+	/*background-color: #4c65b1;
+	color:white;*/
+	color:#FFF;
+	/*padding: 10px;*/
 }
 
 .footer{
 	background-color: #394c85;
 	color:white;
+	height:125px;
+	font-size: 1.12em;
+	font-weight: 300;
+	padding-top:45px;
+	width:100%;
+	margin:0;
+}
+
+.round-borders-sections{
+	border-radius: 25px;
+    border: 2px solid #f7f8fc;
+    padding:2px;
+}
+
+.row-color-gold{
+	background-color: #eac383; /*light version of active link color another is edbc6e*/
+}
+
+.row-color-darkPurple{
+	background: #394c85;
+}
+
+.row-color-tan{
+	background: #bf8032;
+}
+
+.row-color-white{
+	background:#FFF;
+}
+
+.row-color-teal{
+	background: #68b0b9;
+}
+
+.font-color-white{
+	color:#FFF;
+}
+
+.font-color-teal{
+	color:#68b0b9;
+}
+
+.font-color-darkPurple{
+	color: #394c85;
+}
+
+.font-color-gray{
+	color:#f7f8fc;
+}
+
+.captions-1{
+	/*border: 2px solid #68b0b9;*/
+	background-color:#394c85;
+	font-size: 1em;
+	font-weight: 400;
+	color:#fff;
+}
+
+#contact_form input, select {
+	width:100%;
+	margin-bottom: 10px;
+}
+
+#contact_form label{
+	width:100%;
+	margin-bottom: 10px;
+	
+}
+
+#contact_form textarea{
+
+	padding:2px;
+	width:100%;
+	margin-bottom: 10px;
+
+}
+#contact_form input[type=submit]{
+	margin-top:10px;
+	margin-bottom: 10px;
 }

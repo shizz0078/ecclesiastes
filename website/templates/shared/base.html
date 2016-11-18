@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>Ecclesiastes Business Enterprise</title>
 
     <!-- Bootstrap core CSS -->
     {% load staticfiles %}
@@ -76,16 +76,16 @@
               <ul class="nav navbar-nav">
                 <li {% if request.get_full_path == home_url or request.path == '/'%} class="active" {% endif %} ><a href="{% url 'home' %}">Home</a></li>
                 <li {% if request.get_full_path == contact_url %} class="active" {% endif %} ><a href="{% url 'contact' %}">Contact</a></li>
-                <li {% if request.get_full_path == knowledge_url %} class="active" {% endif %} ><a href="#about">Knowledge Corner</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret"></span></a>
                   <ul class="dropdown-menu nav-custom-drop">
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="{% url 'home' %}#aboutUs">About Us</a></li>
+                    <li><a href="{% url 'home' %}#meetTeam">The Team</a></li>
+                    <li><a href="{% url 'home' %}#services">Services</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
                     <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Featured Articles</li>
-                    <li><a href="#">Separated link</a></li>
+                    <!--<li class="dropdown-header">Featured Articles</li>-->
+                    <li><a href="{% url 'contact' %}">Careers</a></li>
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
@@ -102,7 +102,7 @@
     </div>-->
 
       
-    <div class="container" style="margin-top: 60px;">
+    <div class="container-fluid" style="margin-top:60px;">
 
     {% if messages %}
     <div class='row'>
@@ -112,17 +112,26 @@
         {% endfor %}
         </div>
     </div>
-    <div class="alert alert-success">
-      <a href="{% url 'home' %}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <strong>Success!</strong> Indicates a successful or positive action.
+    <div class="row">
+      <br><br>
+      <div class="col-sm-12">
+        <div class="alert alert-success">
+          <a href="{% url 'home' %}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+      </div>
     </div>
     {% endif %}
 
     {% block content %}
       {% endblock content %}
-        <footer class="footer text-center">
-          <p>&copy; Ecclesiastes Business Enterprise.LLC &nbsp; &nbsp; eccbusinessenterprise@gmail.com &nbsp; &nbsp; 1-484-690-4910</p>
+      <div class="row">
+
+        <footer class="col-xs-12 col-md-12 footer text-center">
+          <p>&copy; Ecclesiastes Business Enterprise,LLC &nbsp; &nbsp; eccbusinessenterprise@gmail.com &nbsp; &nbsp; 1-484-690-4910</p>
         </footer>
+
+      </div>
     </div> <!-- /container -->
 
 
