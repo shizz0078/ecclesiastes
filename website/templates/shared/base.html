@@ -70,7 +70,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="{% url 'home' %}" style="color:#ffffff;">Ecclesiastes</a>
+              <a id="logo_home" class="navbar-brand" href="{% url 'home' %}" style="color:#ffffff;"></a><!--Ecclesiastes-->
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -83,14 +83,23 @@
                     <li><a href="{% url 'home' %}#meetTeam">The Team</a></li>
                     <li><a href="{% url 'home' %}#services">Services</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'home' %}#jobs">Careers</a></li>
                     <li role="separator" class="divider"></li>
                     <!--<li class="dropdown-header">Featured Articles</li>-->
-                    <li><a href="{% url 'contact' %}">Careers</a></li>
-                    <li><a href="#">One more separated link</a></li>
+
+                    
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'followup' %}">Follow-up Tracking System</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Employee Portal</a></li>
+                    {% endif %}
                   </ul>
                 </li>
               </ul>
+              <p class="font-color-white navbar-text pull-right ">Welcome {{user.username}}</p>
             </div>
+
           </div>
         </nav>
       <!--<div class="navbar-wrapper">

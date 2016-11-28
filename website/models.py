@@ -27,11 +27,10 @@ class ContactUs(models.Model):
 	pub_date = models.DateTimeField(default=datetime.now)
 	date_modified = models.DateTimeField(blank=True, null=True)
 
-
 	def save(self):
 		if self.id:
-    			self.date_modified = datetime.now()
-                super(ContactUs, self).save()
+			self.date_modified = datetime.now()
+			super(ContactUs, self).save()
 
 	def __str__(self):
 		return self.first_name + " " + self.last_name

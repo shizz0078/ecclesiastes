@@ -2,6 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 from .models import ContactUs
+from .models import ContactStatus
 
 class ContactUsForm(forms.ModelForm):
 	class Meta:
@@ -13,3 +14,8 @@ class ContactUsForm(forms.ModelForm):
 
 		#details = forms.CharField(required = False, widget=forms.Textarea)
 
+class ContactStatusForm(forms.ModelForm):
+	class Meta:
+		model = ContactStatus
+		fields = ('contact_id', 'followup_completed', 'date_completed', 'notes', 'priority',)
+		

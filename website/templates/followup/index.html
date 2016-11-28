@@ -1,0 +1,26 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+
+
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+		
+			<form id="followup_form" method='POST' action='.'>
+				{% csrf_token %}
+				{% if not messages %}
+				<h2>Contact Follow-up Tracking</h2>
+				{{ followup_on_contacts.as_table}}
+				
+				<input type="submit"></input>
+				{% endif %}
+			</form>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+
+
+
+
+{% endblock %}

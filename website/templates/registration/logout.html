@@ -1,0 +1,20 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4 text-center">
+		<p><a href="{% url 'home' %}">Return Home</a></p>
+		<p><a href="{% url 'login' %}">Log back in</a></p>
+
+	</div>
+	<div class="col-sm-4"></div>
+</div>
+
+
+{% endblock %}

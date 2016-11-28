@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from website import views
+import django.contrib.auth.views
 
 
 urlpatterns = [
@@ -24,5 +25,7 @@ urlpatterns = [
 	url(r'^contact/', views.contact, name='contact'),
 	url(r'^website/', include('website.urls')),
     url(r'^admin/', admin.site.urls),
-    #url(r'^system/login/', views.system, name='system')
+    url(r'^accounts/login/', django.contrib.auth.views.login, name='login'),
+    url(r'^accounts/logout/', views.logout, name='logout'),
+    url(r'^followup/', views.followup, name='followup')
 ]

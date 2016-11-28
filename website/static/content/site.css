@@ -22,6 +22,12 @@ body{
 	*/
 }
 
+#logo_home{
+	background-image: url("images/ecclesiastes_tiny_logo2.png");
+	background-repeat: no-repeat;
+	width:85px;
+}
+
 .navbar{
 	background-color: #394c85;
 	
@@ -35,15 +41,35 @@ body{
 	color:#FFFFFF;
 }
 .navbar-toggle{
-	background-color: gray;
+	/*background-color: gray;*/
+	border: none;
+	color:#000;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+	background-color:#fff;
 }
 
 #navbar ul.nav-custom-drop li a{
-	color:black;
+	color:#394c85;
 }
 
+#navbar ul.nav-custom-drop{
+	color:red;
+}
+
+
 #navbar li.dropdown.open a.dropdown-toggle{
+
 	color:#bf8032;
+}
+
+#navbar ul.nav-custom-drop li a:hover{
+	color:#f1c066;
+}
+
+#navbar ul.dropdown-menu {
+	background-color: #FFF;
 }
 
 #navbar li.active a{
@@ -161,6 +187,14 @@ body{
 	color:#f7f8fc;
 }
 
+.cust-font-1{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar .navbar-text{
+	color:#FFF;
+}
+
 .captions-1{
 	/*border: 2px solid #68b0b9;*/
 	background-color:#394c85;
@@ -188,6 +222,29 @@ body{
 
 }
 #contact_form input[type=submit]{
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+
+#followup_form input, select {
+	width:100%;
+	margin-bottom: 10px;
+}
+
+#followup_form label{
+	width:100%;
+	margin-bottom: 10px;
+	
+}
+
+#followup_form textarea{
+
+	padding:2px;
+	width:100%;
+	margin-bottom: 10px;
+
+}
+#followup_form input[type=submit]{
 	margin-top:10px;
 	margin-bottom: 10px;
 }
