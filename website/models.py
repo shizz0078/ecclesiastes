@@ -56,6 +56,9 @@ class ContactStatus(models.Model):
 	notes = models.TextField(max_length=500)
 	priority = models.IntegerField()
 
+	def save(self):
+		super(ContactStatus, self).save()
+		
 	def __str__(self):
 		return self.contact_id.first_name + " " + self.contact_id.first_name
 

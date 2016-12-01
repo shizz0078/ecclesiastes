@@ -1,0 +1,48 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+
+
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+		
+			
+				
+				{% if not messages %}
+				
+				<form id="contactstatus_form_edit" action=''  method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<h3>Contact Follow-up Tracking Update for:</h3>
+					<input type="number" name="contact_id" value="{{ contactstatus.contact_id.id}}" hidden="true">
+					<h4> {{ contactstatus.contact_id}} </h4>
+					<h4>Is completed</h4>
+					<p>{{form.followup_completed}}</p>
+					<h4>Date completed</h4>
+					<p>{{form.date_completed}}</p>
+					<h4>Notes</h4>
+					<p>{{form.notes}}</p>
+					<h4>Priority Level</h4>
+					<p>{{form.priority}}</p>
+					<!--{{form.as_p}}-->
+
+					<table id="contactstatus_form_edit_tbl">
+						<tr>
+							<td><a href="{% url 'followup' %}">Back</a></td>
+
+							<td><input class='submit_btn_likelink' type="submit" value="Save" /></td>
+						</tr>
+					</table>
+					
+
+					{% endif %}
+					
+				</form>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+
+
+
+
+{% endblock %}

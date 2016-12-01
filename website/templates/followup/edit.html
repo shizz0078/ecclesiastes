@@ -1,0 +1,41 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+
+
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+		
+			
+				
+				{% if not messages %}
+				<h2>Contact Follow-up Tracking Update for {{ contactstatus.contact_id}} </h2>
+				<form id="contactstatus_form_edit" method="post" action='' >
+					{% csrf_token %}
+					<h3>Is completed</h3>
+					<p>{{form.followup_completed}}</p>
+					<h3>Notes</h3>
+					<p>{{form.notes}}</p>
+				
+
+					<table>
+						<tr>
+							<td><a href="{% url 'followup' %}">Back</a></td>
+							<td><a href="{% url 'edit' 1 %}">Edit</a></td>
+							<td></td>
+						</tr>
+					</table>
+					
+
+					{% endif %}
+					<input type="submit" value="Save" />
+				</form>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+
+
+
+
+{% endblock %}

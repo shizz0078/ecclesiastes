@@ -73,7 +73,7 @@ body{
 }
 
 #navbar li.active a{
-	background-color: #f1c066;
+	background-color: #f1c066; /*f1c066*/
 }
 
 .logo-small {
@@ -152,7 +152,7 @@ body{
 }
 
 .row-color-gold{
-	background-color: #eac383; /*light version of active link color another is edbc6e*/
+	background-color: #eac383; /*light version of active link color another is edbc6e    eac383*/
 }
 
 .row-color-darkPurple{
@@ -247,4 +247,16 @@ body{
 #followup_form input[type=submit]{
 	margin-top:10px;
 	margin-bottom: 10px;
+}
+
+#contact_detail_tbl td a, #contactstatus_form_edit_tbl td a{
+	padding-right: 20px;
+}
+
+.submit_btn_likelink{
+	background: none;
+	text-decoration: none;
+	border:none;
+	cursor: pointer;
+	color:#337ab7;
 }

@@ -1,0 +1,38 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+
+
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+		
+			
+				{% csrf_token %}
+				{% if not messages %}
+				<h2>Contact Follow-up Tracking for:</h2><h2> {{ contactstatus.contact_id}} </h2>
+				<h3>Is completed</h3>
+				<p>{{contactstatus.followup_completed}}
+				<h3>Notes</h3>
+				<p>{{contactstatus.notes}}</p>
+			
+
+				<table id="contact_detail_tbl">
+					<tr>
+						<td><a href="{% url 'followup' %}">Back</a></td>
+						<td><a href="{% url 'edit' contactstatus.id %}">Edit</a></td>
+						<td></td>
+					</tr>
+				</table>
+				
+
+				{% endif %}
+		
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+
+
+
+
+{% endblock %}

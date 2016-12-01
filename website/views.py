@@ -9,6 +9,10 @@ from  django.contrib import messages
 from django.contrib import auth
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
+from django.views import generic
+from django.core.urlresolvers import reverse_lazy
 
 # Create your views here.
 def index(request):
@@ -47,7 +51,50 @@ def logout(request):
 	#return render(request, 'registration/logout.html')
 	#return render(request, 'logout/index.html')
 
-@login_required#(login_url="login/")
+@login_required(login_url="login/")
 def followup(request):
 	followup_on_contacts = ContactStatusForm(request.POST or None)
-	return render(request, "followup/index.html", {'followup_on_contacts':followup_on_contacts})
+	if followup_on_contacts.is_valid():
+		save_it = followup_on_contacts.save(commit = False)
+		save_it.save()
+		followup_on_contacts = ContactStatusForm()
+		messages.success(request, 'Follow details have been saved')
+		return render(request, "followup/followup.html",{'followup_on_contacts':followup_on_contacts})
+	return render(request, "followup/followup.html", {'followup_on_contacts':followup_on_contacts})
+
+class FollowUpDetailView(generic.DetailView):
+	model = ContactStatus
+	template_name = "followup/detail.html"
+
+class FollowUpUpdateView(generic.edit.UpdateView):
+	model = ContactStatus
+	fields = ['contact_id', 'followup_completed', 'date_completed', 'notes', 'priority']
+	success_url = reverse_lazy('home')
+	#success_url = "/index.html"
+	#template_name = "followup/edit.html"
+	
+
+class FollowUpEditView(generic.edit.FormView):
+	form_class = ContactStatusForm
+	template_name = "followup/edit.html"
+	success_url = "/index.html"
+	def form_valid(self, form):
+		form.save()
+		return super(FollowUpEditView, self).form_valid(form)
+
+#@login_required#(login_url="login/")
+#def followup(request):
+#	followup_on_contacts = ContactStatusForm(request.POST or None)
+#	if followup_on_contacts.is_valid():
+#		save_it = followup_on_contacts.save(commit = False)
+#		save_it.save()
+#		followup_on_contacts = ContactStatusForm()
+#		messages.success(request, 'Follow details have been saved')
+#		return render(request, "followup/index.html",{'followup_on_contacts':followup_on_contacts})
+#	return render(request, "followup/index.html", {'followup_on_contacts':followup_on_contacts})
+
+#class FollowupListView(ListView):
+#	model = ContactStatus
+#	def get_context_data(self, **kwargs):
+#		context = super(FollowupListView, self).get_context_data(**kwargs)
+#		return context

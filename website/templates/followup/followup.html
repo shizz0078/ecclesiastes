@@ -1,0 +1,13 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+	<h1>Contact Tracking</h1>
+	<ul>
+	{% for contact in object_list %}
+		<li><a href="/followup/{{contact.id}}">{{ contact.contact_id }}</a></li>
+	{% empty %}
+		<li> Nothing </li>
+	{% endfor %}
+	</ul>
+
+{% endblock %}
